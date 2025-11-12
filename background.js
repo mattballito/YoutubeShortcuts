@@ -6,8 +6,8 @@ chrome.runtime.onMessage.addListener(function(request) {
 
 chrome.commands.onCommand.addListener(function(command) {
     chrome.storage.local.get(['controlledTabId'], function(result) {
-        console.log("this is the command:")
-        console.log(command)
+        //console.log("this is the command:")
+        //console.log(command)
       if (result.controlledTabId) {
         chrome.tabs.sendMessage(result.controlledTabId, {command: command});
       } else {
